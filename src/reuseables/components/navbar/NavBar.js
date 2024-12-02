@@ -66,7 +66,7 @@ const NavBar = ({ darkMode, setDarkMode }) => {
 
         {/* Logo/Brand Name */}
         <Typography variant="h6" sx={{ flexGrow: 1, color: darkMode ? "white" : "black" }}>
-          <img src="/your-logo.png" alt="logo" style={{ width: 40 }} />
+          <img src="/assets/images/company-logo.png" alt="logo" style={{ width: 40 }} />
         </Typography>
 
         {/* Search Box */}

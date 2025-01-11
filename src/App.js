@@ -2,10 +2,10 @@ import React, { useState,useEffect } from "react";
 import { CssBaseline, ThemeProvider, createTheme, Box, CircularProgress, Typography } from "@mui/material";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NavBar from "./reuseables/components/navbar/NavBar";
-import HorizontalScrollCategory from "./reuseables/components/navbar/HorizontalScrollCategory"; // Assuming the path is correct
-import UserPreferences from "./user/user-preference/components/UserPreference"; // Assuming this is the correct import
+import HorizontalScrollCategory from "./reuseables/components/navbar/HorizontalScrollCategory"; 
+import UserPreferences from "./user/user-preference/components/UserPreference"; 
 import SellItemForm from "./others/SellItemForm";
-
+import AuthPage from "./auth/Login";
 import { observer } from "mobx-react-lite";
 import itemStore from "./others/SellingingStore";
 
@@ -32,10 +32,7 @@ const Homepage = observer(() => {
 });
 
 
-// Define the Login component
-const Login = () => {
-  return <h1>Login Page</h1>;
-};
+
 
 function App() {
   // Dark mode state for the whole app
@@ -99,7 +96,7 @@ function App() {
           <Route path="/" element={<Homepage />} />
           <Route path="/sell" element={<SellItemForm />} /> 
           {/* I will take this component out later */}
-          <Route path="/login" element={<Login />} />
+          <Route path="/auth" element={<AuthPage />} />
         </Routes>
       </Router>
     </ThemeProvider>

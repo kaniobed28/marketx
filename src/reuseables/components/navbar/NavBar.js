@@ -1,9 +1,10 @@
 import React from "react";
-import { AppBar, Toolbar, IconButton, Typography, InputBase, Switch } from "@mui/material";
+import { AppBar, Toolbar, IconButton, Typography, InputBase, Switch, Button } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import MenuIcon from "@mui/icons-material/Menu";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
 import { styled, alpha } from "@mui/material/styles";
+import { Link } from "react-router-dom"; // Import Link for navigation
 
 // Define the Search components with MUI styling
 const Search = styled("div")(({ theme }) => ({
@@ -54,8 +55,6 @@ const NavBar = ({ darkMode, setDarkMode }) => {
     setDarkMode(!darkMode);
   };
 
-  
-
   return (
     <AppBar position="static" sx={{ backgroundColor: darkMode ? "#333" : "#fff", boxShadow: "none" }}>
       <Toolbar>
@@ -88,6 +87,20 @@ const NavBar = ({ darkMode, setDarkMode }) => {
 
         {/* Dark Mode Switch */}
         <Switch checked={darkMode} onChange={handleDarkModeToggle} />
+
+        {/* Sign In Button */}
+        <Button
+          component={Link}
+          to="/auth"
+          variant="outlined"
+          sx={{
+            marginLeft: 2,
+            color: darkMode ? "white" : "black",
+            borderColor: darkMode ? "white" : "black",
+          }}
+        >
+          Sign In
+        </Button>
       </Toolbar>
     </AppBar>
   );

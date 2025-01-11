@@ -12,6 +12,14 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px); /* Moves the icon up */
+  }
+}
 
 .App-header {
   background-color: #282c34;
